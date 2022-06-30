@@ -174,6 +174,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"section" => "#SECTION_CODE#/",
 		"element" => "#SECTION_CODE#/#ELEMENT_CODE#/",
 		"compare" => "compare/",
+		"offer" => "#SECTION_CODE#/#ELEMENT_CODE#/#COLOR_CODE#/",
 	)
 	),
 	false

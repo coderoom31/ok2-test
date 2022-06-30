@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="https://cx74939.tmweb.ru/" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="https://cx74939.tmweb.ru/">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="upload" />
+            <excludedPath path="bitrix" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

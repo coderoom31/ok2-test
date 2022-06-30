@@ -2609,12 +2609,9 @@
 				let h1 = document.getElementsByTagName('H1')[0];
 				let title = document.getElementsByTagName('title')[0];
 
-
-
-				console.log(index);
-				console.log(this.offers[index]);
-
-				console.log(this);
+				h1.innerHTML = this.offers[this.offerNum].HEADER;
+				title.innerHTML = this.offers[this.offerNum].TITLE;
+				history.pushState(null, null, this.offers[this.offerNum].DETAIL_PAGE_URL);
 			}
 		},
 		changeSkuDescription: function(index)

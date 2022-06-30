@@ -2605,6 +2605,16 @@
 				// new event
 				BX.onCustomEvent('onCatalogElementChangeOffer', [eventData]);
 				eventData = null;
+
+				let h1 = document.getElementsByTagName('H1')[0];
+				let title = document.getElementsByTagName('title')[0];
+
+
+
+				console.log(index);
+				console.log(this.offers[index]);
+
+				console.log(this);
 			}
 		},
 		changeSkuDescription: function(index)

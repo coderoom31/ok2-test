@@ -1672,7 +1672,8 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-'.$arParams['TEMPLATE_TH
 				'DETAIL_TEXT' => $arResult['DETAIL_TEXT'],
 				'DETAIL_TEXT_TYPE' => $arResult['DETAIL_TEXT_TYPE'],
 				'PREVIEW_TEXT' => $arResult['PREVIEW_TEXT'],
-				'PREVIEW_TEXT_TYPE' => $arResult['PREVIEW_TEXT_TYPE']
+				'PREVIEW_TEXT_TYPE' => $arResult['PREVIEW_TEXT_TYPE'],
+                'DETAIL_PAGE_URL' => $arResult['DETAIL_PAGE_URL']
 			),
 			'BASKET' => array(
 				'QUANTITY' => $arParams['PRODUCT_QUANTITY_VARIABLE'],

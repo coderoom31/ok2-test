@@ -10,7 +10,6 @@
           </mappings>
           <excludedPaths>
             <excludedPath path="upload" />
-            <excludedPath path="bitrix" />
           </excludedPaths>
         </serverdata>
       </paths>

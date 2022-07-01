@@ -822,6 +822,7 @@
 					this.product.detailTextType = this.params.PRODUCT.DETAIL_TEXT_TYPE;
 					this.product.previewText = this.params.PRODUCT.PREVIEW_TEXT;
 					this.product.previewTextType = this.params.PRODUCT.PREVIEW_TEXT_TYPE;
+					this.product.detailPageUrl = this.params.PRODUCT.DETAIL_PAGE_URL;
 				}
 			}
 			else
@@ -2606,12 +2607,17 @@
 				BX.onCustomEvent('onCatalogElementChangeOffer', [eventData]);
 				eventData = null;
 
+				let cur_url = window.location.pathname;
 				let h1 = document.getElementsByTagName('H1')[0];
 				let title = document.getElementsByTagName('title')[0];
 
-				h1.innerHTML = this.offers[this.offerNum].HEADER;
-				title.innerHTML = this.offers[this.offerNum].TITLE;
-				history.pushState(null, null, this.offers[this.offerNum].DETAIL_PAGE_URL);
+				if (cur_url !== this.product.detailPageUrl) {
+					h1.innerHTML = this.offers[this.offerNum].HEADER;
+					title.innerHTML = this.offers[this.offerNum].TITLE;
+					history.pushState(null, null, this.offers[this.offerNum].DETAIL_PAGE_URL);
+				} else {
+					this.product.detailPageUrl = '';
+				}
 			}
 		},
 		changeSkuDescription: function(index)

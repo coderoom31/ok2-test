@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="0f519fe9-93f2-422a-9f66-4d42a409a56c" name="https://cx74939.tmweb.ru/">
+      <webServer id="0f519fe9-93f2-422a-9f66-4d42a409a56c" name="https://cx74939.tmweb.ru/" url="">
         <fileTransfer rootFolder="/home/c/cx74939/public_html" accessType="SFTP" host="92.53.96.254" port="22" sshConfigId="8ce3e69d-63ee-4fa8-8176-d61050c03409" sshConfig="cx74939@92.53.96.254:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />

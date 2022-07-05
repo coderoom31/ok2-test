@@ -1,4 +1,7 @@
-<? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+<?
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+
+use Filshin\Seo\Helper;
 
 /**
  * @var CBitrixComponentTemplate $this
@@ -10,10 +13,15 @@ $arParams = $component->applyTemplateModifications();
 
 $cp = $this->__component;
 
+if (CModule::IncludeModule('filshin.seo')) {
+    $arTitle = Helper::getTitleOptions();
+    $arHeader = Helper::getHeaderOptions();
+}
+
 foreach ($arResult['JS_OFFERS'] as $key => &$arJsOffer) {
     $arJsOffer['DETAIL_PAGE_URL'] = $arResult['DETAIL_PAGE_URL'] . $arResult['SKU_PROPS']['COLOR_REF']['VALUES'][$arJsOffer['TREE']['PROP_21']]['XML_ID'] . '/';
-    $arJsOffer['HEADER'] = $arResult['META_TAGS']['TITLE'] . ' ' . $arResult['SKU_PROPS']['COLOR_REF']['VALUES'][$arJsOffer['TREE']['PROP_21']]['NAME'];
-    $arJsOffer['TITLE'] = $arResult['META_TAGS']['BROWSER_TITLE'] . ' ' . $arResult['SKU_PROPS']['COLOR_REF']['VALUES'][$arJsOffer['TREE']['PROP_21']]['NAME'];
+    $arJsOffer['HEADER'] = $arHeader['START'] . ' ' . $arResult['META_TAGS']['TITLE'] . ' ' . $arResult['SKU_PROPS']['COLOR_REF']['VALUES'][$arJsOffer['TREE']['PROP_21']]['NAME'] . ' ' . $arHeader['END'];
+    $arJsOffer['TITLE'] = $arTitle['START'] . ' ' . $arResult['META_TAGS']['BROWSER_TITLE'] . ' ' . $arResult['SKU_PROPS']['COLOR_REF']['VALUES'][$arJsOffer['TREE']['PROP_21']]['NAME'] . ' ' . $arTitle['END'];
 }
 
 if (isset($arParams['COLOR_CODE'])) {
@@ -37,9 +45,9 @@ if (isset($arParams['COLOR_CODE'])) {
             $cp->SetResultCacheKeys(array('HAS_COLOR'));
         }
     } else {
-        if($arResult['JS_OFFERS'][0]['TREE']['PROP_21'] != $iColorId) {
+        if ($arResult['JS_OFFERS'][0]['TREE']['PROP_21'] != $iColorId) {
             foreach ($arResult['JS_OFFERS'] as $arJsOffer) {
-                if($arJsOffer['TREE']['PROP_21'] == $iColorId){
+                if ($arJsOffer['TREE']['PROP_21'] == $iColorId) {
                     $arResult['OFFER_NUM'] = $arJsOffer['ID'];
                 }
             }
